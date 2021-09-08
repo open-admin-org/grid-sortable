@@ -21,6 +21,7 @@ class SortableDisplay extends AbstractDisplayer
         animation: 150,
         fallbackOnBody: false,
         swapThreshold: 0.65,
+        handle : '.grid-sortable-handle',
         onUpdate: function (evt) {
             document.querySelector(".grid-save-order-btn").classList.remove("d-none");
         },
