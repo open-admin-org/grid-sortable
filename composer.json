@@ -1,0 +1,34 @@
+{
+    "name": "open-admin-ext/grid-sortable",
+    "description": "Sort the grid data by drag and drop rows",
+    "type": "library",
+    "keywords": ["open-admin", "extension", "grid", "sortable"],
+    "homepage": "https://github.com/open-admin-org/grid-sortable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sb | open-admin.org",
+            "email": "info@open-admin.org"
+        }
+    ],
+    "require": {
+        "php": ">=7.3.0",
+        "open-admin-org/open-admin": ">=1.0.0",
+        "spatie/eloquent-sortable": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OpenAdmin\\Admin\\GridSortable\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OpenAdmin\\Admin\\GridSortable\\GridSortableServiceProvider"
+            ]
+        }
+    }
+}
