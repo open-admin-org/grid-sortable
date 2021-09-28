@@ -18,8 +18,8 @@ class GridSortableController extends Controller
                 collect($sorts)->pluck('sort')->sort()
             );
 
-        $status     = true;
-        $message    = trans('admin.save_succeeded');
+        $status = true;
+        $message = trans('admin.save_succeeded');
         $modelClass = $request->get('_model');
 
         try {
@@ -33,7 +33,7 @@ class GridSortableController extends Controller
                 $model->save();
             }
         } catch (Exception $exception) {
-            $status  = false;
+            $status = false;
             $message = $exception->getMessage();
         }
 

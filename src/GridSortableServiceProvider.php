@@ -11,8 +11,8 @@ class GridSortableServiceProvider extends ServiceProvider
      */
     public function boot(GridSortable $extension)
     {
-        if (! GridSortable::boot()) {
-            return ;
+        if (!GridSortable::boot()) {
+            return;
         }
 
         GridSortable::routes(__DIR__.'/../routes/web.php');
