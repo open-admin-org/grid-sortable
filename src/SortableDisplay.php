@@ -16,22 +16,21 @@ class SortableDisplay extends AbstractDisplayer
 
         $script = <<<SCRIPT
 
-
+(function() {
     let sortableSettings = {
         animation: 150,
         fallbackOnBody: false,
         swapThreshold: 0.65,
         handle : '.grid-sortable-handle',
         onUpdate: function (evt) {
-            document.querySelector(".grid-save-order-btn").classList.remove("d-none");
+            evt.target.closest('.card').querySelector(".grid-save-order-btn").classList.remove("d-none");
         },
     }
     let setSortable = new Sortable(document.querySelector("#{$id} tbody"), sortableSettings);
-
-    document.querySelector(".grid-save-order-btn").addEventListener("click",function () {
+    document.querySelector("#{$id}").closest('.card').querySelector(".grid-save-order-btn").addEventListener("click",function () {
 
         let sorts = [];
-        document.querySelectorAll('.grid-sortable-handle').forEach(elm => {
+        document.querySelectorAll('#{$id} .grid-sortable-handle').forEach(elm => {
             sorts.push(elm.dataset);
         });
 
@@ -48,7 +47,7 @@ class SortableDisplay extends AbstractDisplayer
             }
         });
     });
-
+})();
 SCRIPT;
 
         Admin::script($script);
